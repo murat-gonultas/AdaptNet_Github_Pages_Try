@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Begrüßung</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input, button {
+      font-size: 1em;
+      padding: 8px;
+      margin: 10px;
+    }
+    #gruss {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Willkommen!</h1>
+  <p>Bitte gib deinen Namen ein:</p>
+  <input type="text" id="name" placeholder="Dein Name" />
+  <button onclick="begrüßen()">Begrüßen</button>
+
+  <div id="gruss"></div>
+
+  <script>
+    function begrüßen() {
+      const name = document.getElementById("name").value;
+      const ausgabe = document.getElementById("gruss");
+      if (name.trim() !== "") {
+        ausgabe.textContent = `Hallo, ${name}! Schön dich zu sehen.`;
+      } else {
+        ausgabe.textContent = "Bitte gib einen Namen ein.";
+      }
+    }
+  </script>
+</body>
+</html>
